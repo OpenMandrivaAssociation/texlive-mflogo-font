@@ -1,6 +1,6 @@
 Name:		texlive-mflogo-font
 Version:	54512
-Release:	1
+Release:	2
 Summary:	Metafont logo font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/mflogo-font
