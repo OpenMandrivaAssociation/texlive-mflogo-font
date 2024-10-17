@@ -3,7 +3,7 @@ Version:	54512
 Release:	2
 Summary:	Metafont logo font
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/mflogo-font
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/mflogo-font
 License:	knuth
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mflogo-font.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mflogo-font.doc.r%{version}.tar.xz
