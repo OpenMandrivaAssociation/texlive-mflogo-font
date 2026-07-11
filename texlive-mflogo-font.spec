@@ -1,42 +1,24 @@
-Name:		texlive-mflogo-font
-Version:	54512
-Release:	2
+%global tl_name mflogo-font
+%global tl_revision 54512
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.002
+Release:	%{tl_revision}.1
 Summary:	Metafont logo font
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/mflogo-font
+URL:		https://www.ctan.org/tex-archive/fonts/mflogo
 License:	knuth
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mflogo-font.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mflogo-font.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/mflogo-font.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/mflogo-font.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-These fonts were created in Metafont by Knuth, for his own
-publications. At some stage, the letters 'P' and 'S' were
-added, so that the MetaPost logo could also be expressed. The
-fonts were originally issued (of course) as Metafont source;
-they have since been autotraced and reissued in Adobe Type 1
-format by Taco Hoekwater.
+These fonts were created in Metafont by Knuth, for his own publications.
+At some stage, the letters 'P' and 'S' were added, so that the MetaPost
+logo could also be expressed. The fonts were originally issued (of
+course) as Metafont source; they have since been autotraced and reissued
+in Adobe Type 1 format by Taco Hoekwater.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/fonts/type1/hoekwater/mflogo-font
-%{_texmfdistdir}/fonts/map/dvips/mflogo-font
-%{_texmfdistdir}/fonts/afm/hoekwater/mflogo-font
-%doc %{_texmfdistdir}/doc/fonts/mflogo-font
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
